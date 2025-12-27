@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Guidia – Navigation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #fff;
+      text-align: center;
+    }
+    button {
+      font-size: 22px;
+      padding: 20px 28px;
+      border-radius: 12px;
+      border: none;
+      background: #2f6df6;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div>
+    <p id="msg">Tap to start navigation</p>
+    <button id="startBtn">Start Navigation</button>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const destination = params.get("destination") || "hospital";
+
+    function speak(text) {
+      const u = new SpeechSynthesisUtterance(text);
+      window.speechSynthesis.cancel();
+      window.speechSynthesis.speak(u);
+    }
+
+    speak("Tap once to start turn by turn navigation");
+
+    document.getElementById("startBtn").addEventListener("click", () => {
+      speak("Opening Google Maps navigation");
+
+      const url =
+        `https://www.google.com/maps/dir/?api=1` +
+        `&destination=${encodeURIComponent(destination)}` +
+        `&travelmode=walking&dir_action=navigate`;
+
+      window.location.href = url;
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Guidia – Accessible Navigation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Bootstrap Icons -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    rel="stylesheet"
+  />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- AI Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0d6efd">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+</head>
+
+<body>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="hero-background"></div>
+    
+    <div class="container hero-content">
+      <!-- App Logo/Icon -->
+      <div class="hero-icon mb-4">
+        <i class="bi bi-ear-fill"></i>
+      </div>
+
+      <!-- Main Heading -->
+      <h1 class="hero-title">Guidia</h1>
+      
+      <!-- Tagline -->
+      <p class="hero-subtitle">Navigate with Confidence, See with Sound</p>
+      
+      <!-- Description -->
+      <p class="hero-description">
+        Voice-powered navigation for visually impaired users. Real-time surroundings detection, audio guidance, and intuitive voice commands.
+      </p>
+
+      <!-- Primary CTA -->
+      <div class="hero-cta">
+        <button class="btn btn-primary btn-lg btn-cta" aria-label="Tap to start voice guidance">
+          <i class="bi bi-play-circle-fill me-2"></i>Tap Anywhere to Start
+        </button>
+      </div>
+
+      <!-- Features Preview Pills -->
+      <div class="hero-features mt-5">
+        <span class="feature-pill">
+          <i class="bi bi-camera-video"></i> Live Vision
+        </span>
+        <span class="feature-pill">
+          <i class="bi bi-mic-fill"></i> Voice Commands
+        </span>
+        <span class="feature-pill">
+          <i class="bi bi-pin-map-fill"></i> Navigation
+        </span>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+      <i class="bi bi-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- MAIN APP CONTAINER -->
+  <div class="app-container">
+    
+    <!-- MAIN GRID -->
+    <div class="row g-4">
+
+      <!-- DESTINATION CARD -->
+      <div class="col-lg-4">
+        <div class="card feature-card h-100">
+          <div class="card-icon-circle">
+            <i class="bi bi-geo-alt-fill"></i>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Destination</h5>
+            <p class="card-text">
+              Speak your destination or choose from saved locations.
+            </p>
+
+            <input
+              id="destinationInput"
+              type="text"
+              class="form-control form-control-lg input-modern"
+              placeholder="Hospital, School, Home…"
+              aria-label="Destination input"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- CAMERA CARD -->
+      <div class="col-lg-4">
+        <div class="card feature-card camera-card h-100">
+          <div class="card-icon-circle">
+            <i class="bi bi-camera-video-fill"></i>
+          </div>
+          <div class="card-body p-0">
+            <h5 class="card-title px-4 pt-4 mb-3">Surroundings</h5>
+
+            <video
+              id="video"
+              autoplay
+              muted
+              playsinline
+              class="camera-video"
+            ></video>
+          </div>
+        </div>
+      </div>
+
+      <!-- GUIDANCE CARD -->
+      <div class="col-lg-4">
+        <div class="card feature-card guidance-card h-100">
+          <div class="card-icon-circle active">
+            <i class="bi bi-ear-fill"></i>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Live Guidance</h5>
+
+            <div
+              id="status"
+              class="status-box"
+              aria-live="polite"
+              aria-atomic="true"
+            >
+              <span class="pulse"></span>
+              Initializing system…
+            </div>
+
+            <div class="guidance-tips">
+              <p class="guidance-tip-item">
+                <i class="bi bi-play-fill"></i> "Lead me to hospital"
+              </p>
+              <p class="guidance-tip-item">
+                <i class="bi bi-play-fill"></i> "Start navigation"
+              </p>
+              <p class="guidance-tip-item">
+                <i class="bi bi-play-fill"></i> Audio guidance works automatically
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>

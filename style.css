@@ -1,0 +1,603 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= BASE PAGE ================= */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #1f2937;
+  line-height: 1.6;
+  background: #f9fafb;
+}
+
+/* ================= HERO SECTION ================= */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  overflow: hidden;
+}
+
+/* Hero Background Gradient */
+.hero-background {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #0369a1 0%, #0ea5e9 50%, #06b6d4 100%);
+  z-index: -1;
+}
+
+/* Optional decorative elements */
+.hero-background::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  filter: blur(40px);
+}
+
+.hero-background::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  filter: blur(40px);
+}
+
+/* Hero Content Container */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Hero Icon */
+.hero-icon {
+  font-size: 64px;
+  color: white;
+  opacity: 0.95;
+}
+
+/* Hero Title */
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: white;
+  margin: 20px 0;
+  word-spacing: 100vw;
+}
+
+/* Hero Subtitle (Tagline) */
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+/* Hero Description */
+.hero-description {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 32px;
+  line-height: 1.7;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Hero CTA Button */
+.hero-cta {
+  margin-bottom: 48px;
+}
+
+.btn-cta {
+  padding: 16px 40px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  background: white;
+  color: #0369a1;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.btn-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  background: white;
+  color: #0369a1;
+}
+
+.btn-cta:active {
+  transform: translateY(0);
+}
+
+/* Feature Pills */
+.hero-features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.feature-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.feature-pill:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+}
+
+.feature-pill i {
+  font-size: 1rem;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  opacity: 0.7;
+  font-size: 24px;
+  animation: bounce 2s infinite;
+  z-index: 10;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+/* ================= APP CONTAINER ================= */
+.app-container {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 40px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+/* ================= FEATURE CARDS ================= */
+.feature-card {
+  background: white;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-card:hover {
+  border-color: #0369a1;
+  box-shadow: 0 10px 30px rgba(3, 105, 161, 0.1);
+  transform: translateY(-4px);
+}
+
+/* Card Icon Circle */
+.card-icon-circle {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #0369a1 0%, #0ea5e9 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  box-shadow: 0 4px 12px rgba(3, 105, 161, 0.2);
+}
+
+.card-icon-circle.active {
+  background: linear-gradient(135deg, #06b6d4 0%, #0ea5e9 100%);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 4px 12px rgba(3, 105, 161, 0.2);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(6, 182, 212, 0.4);
+  }
+}
+
+/* Card Title */
+.feature-card .card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 12px;
+  margin-top: 8px;
+}
+
+/* Card Text */
+.feature-card .card-text {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Card Body */
+.feature-card .card-body {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================= INPUT STYLES ================= */
+.input-modern {
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #f9fafb;
+  color: #1f2937;
+}
+
+.input-modern::placeholder {
+  color: #9ca3af;
+}
+
+.input-modern:focus {
+  border-color: #0369a1;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(3, 105, 161, 0.1);
+  outline: none;
+}
+
+/* ================= CAMERA CARD ================= */
+.camera-card {
+  overflow: hidden;
+}
+
+.camera-card .card-body {
+  padding: 0;
+}
+
+.camera-video {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+  background: #1f2937;
+}
+
+/* ================= GUIDANCE CARD ================= */
+.guidance-card {
+  background: linear-gradient(135deg, #f0f9ff 0%, #f0f4ff 100%);
+  border-color: #dbeafe;
+}
+
+.guidance-card:hover {
+  border-color: #0369a1;
+  background: linear-gradient(135deg, #f0f9ff 0%, #f0f4ff 100%);
+}
+
+/* Status Box with Pulse */
+.status-box {
+  background: linear-gradient(135deg, #0369a1 0%, #0ea5e9 100%);
+  color: white;
+  padding: 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 80px;
+  margin: 16px 0;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(3, 105, 161, 0.2);
+}
+
+/* Pulse Animation */
+.pulse {
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  animation: pulse-animation 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-animation {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}
+
+/* Guidance Tips */
+.guidance-tips {
+  margin-top: 20px;
+}
+
+.guidance-tip-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #4b5563;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(3, 105, 161, 0.1);
+}
+
+.guidance-tip-item:last-child {
+  border-bottom: none;
+}
+
+.guidance-tip-item i {
+  color: #0369a1;
+  font-size: 0.75rem;
+}
+
+/* ================= MAP STYLES ================= */
+.map-card {
+  padding: 0;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+#map {
+  width: 100%;
+  height: 420px;
+  border-radius: 16px;
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+@media (max-width: 1024px) {
+  .app-container {
+    margin: 40px 20px;
+    padding: 30px;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 90vh;
+    padding: 30px 20px;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-features {
+    gap: 10px;
+  }
+
+  .feature-pill {
+    font-size: 0.85rem;
+    padding: 8px 16px;
+  }
+
+  .app-container {
+    margin: 30px 15px;
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .feature-card {
+    border-radius: 12px;
+  }
+
+  .camera-video {
+    height: 200px;
+  }
+
+  #map {
+    height: 300px;
+  }
+
+  .btn-cta {
+    padding: 12px 32px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section {
+    min-height: 85vh;
+    padding: 20px 16px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-icon {
+    font-size: 48px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+  }
+
+  .scroll-indicator {
+    bottom: 20px;
+    font-size: 20px;
+  }
+
+  .app-container {
+    margin: 20px 10px;
+    padding: 16px;
+  }
+
+  .feature-card .card-body {
+    padding: 16px;
+  }
+
+  .feature-card .card-title {
+    font-size: 1.1rem;
+  }
+
+  .card-icon-circle {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    top: 12px;
+    right: 12px;
+  }
+
+  .camera-video {
+    height: 180px;
+  }
+
+  .status-box {
+    padding: 16px;
+    font-size: 0.9rem;
+    min-height: 70px;
+  }
+
+  .guidance-tip-item {
+    font-size: 0.85rem;
+  }
+
+  .btn-cta {
+    padding: 10px 24px;
+    font-size: 0.95rem;
+  }
+
+  #map {
+    height: 250px;
+  }
+}
+
+/* ================= FULLSCREEN MAP MODE ================= */
+body.fullscreen-active {
+  display: block;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+body.fullscreen-active .hero-section {
+  display: none;
+}
+
+body.fullscreen-active .app-container {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+body.fullscreen-active .row {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  gap: 0;
+}
+
+body.fullscreen-active .map-card,
+body.fullscreen-active #map {
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+  margin: 0;
+}
+
+/* ================= ACCESSIBILITY ================= */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .scroll-indicator {
+    animation: none;
+  }
+}
+
+/* High contrast support */
+@media (prefers-contrast: more) {
+  .feature-card {
+    border-width: 2px;
+  }
+
+  .input-modern {
+    border-width: 3px;
+  }
+
+  .status-box {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+  }
+}
